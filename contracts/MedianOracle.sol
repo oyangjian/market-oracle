@@ -38,10 +38,12 @@ contract MedianOracle is Ownable, IOracle {
     event ProviderReportPushed(address indexed provider, uint256 payload, uint256 timestamp);
 
     // The number of seconds after which the report is deemed expired.
+    // 24hours
     uint256 public reportExpirationTimeSec;
 
     // The number of seconds since reporting that has to pass before a report
     // is usable.
+    // 3600/1hour
     uint256 public reportDelaySec;
 
     // The minimum number of providers with valid reports to consider the
